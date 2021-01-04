@@ -1,0 +1,85 @@
+#hey-there {
+	color: black;
+	font-weight: bold;
+	font-size: 5vw;
+    font-family: Montserrat, sans-serif;
+    grid-column: 1/4;
+    transition: opacity .5s;
+}
+
+#home {
+    display: grid;
+    margin: 7vh 5vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 12.5vh 6.5vh 6.5vh 6.5vh 10vh auto auto;
+    position: absolute;
+}
+
+#sentence-name {
+    font-size: 2.3vw;
+    font-weight: 300;
+    transition: margin-bottom .5s;
+    margin-bottom: 23vh;
+}
+
+#sentence-student, #sentence-identity {
+    grid-column: 1/4;
+    font-size: 2.3vw;
+    font-weight: 300;
+    transition: opacity .5s;
+}
+
+#sentence-student {
+    grid-row: 3;
+}
+
+#sentence-identity{
+    grid-row: 4;
+}
+
+#home-learn {
+    grid-column: 1;
+    grid-row: 5;
+    font-size: 2.3vw;
+    margin-top: 2vw;
+    font-weight: bolder;
+    transition: opacity .5s;
+}
+
+#home-links-cont {
+    grid-column: 1;
+    grid-row: 2;
+    padding-right: 4.2vw;
+    transition: margin .5s, padding .5s;
+}
+
+.home-links {
+    background-color: black;
+    color: white;
+    font-size: 2.3vw;
+    height: 3.2vw;
+    float: right;
+    clear: both;
+	text-align: right;
+	padding: .5vw 1vw .5vw 2vw;
+	transition: font-size .2s, background-color .2s, letter-spacing .2s, color .2s, height .2s, font-weight .2s;
+    letter-spacing: .1vw;
+    margin-top: 1vw;
+}
+
+.home-links:hover {
+	font-size: 2.3vw;
+	cursor: pointer;
+	background-color: #FAA52D;
+	letter-spacing: .2vw;
+}
+
+#me {
+    grid-column: 2;
+    grid-row: 5/7;
+    width: 95%;
+    transform: rotate (3deg);
+	border: .8vw solid white;
+    box-shadow: .5vw -.5vw 1vw 0 #888888;
+    transition: opacity .5s;
+}
