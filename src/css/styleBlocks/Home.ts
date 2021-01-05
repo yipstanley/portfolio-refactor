@@ -13,7 +13,7 @@ export const LinkContainerHomeStyle = {
 
 export const LinkContainerAwayStyle = {
     marginTop: "17vh",
-    marginLeft: "-10.5vw"
+    marginLeft: "-14.5vw"
 };
 
 export const NameAwayStyle = {

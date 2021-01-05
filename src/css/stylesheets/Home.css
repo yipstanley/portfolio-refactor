@@ -12,7 +12,7 @@
     margin: 7vh 5vw;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 12.5vh 6.5vh 6.5vh 6.5vh 10vh auto auto;
-    position: absolute;
+    position: fixed;
 }
 
 #sentence-name {

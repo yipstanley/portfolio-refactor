@@ -4,6 +4,7 @@ import "../css/stylesheets/Home.css"
 import Me from "../images/me.jpg";
 import Resume from "../images/Yip.Stanley.2021.pdf"
 import { sleep } from "../utils";
+import { Paths } from "./App";
 
 const identities = ["a pianist", "a graphic designer", "a student", "a son", "a low-income student",
 	"a musician", "a leader", "a grandson", "a brother", "an optimist", "a first-generation student", "a programmer"];
@@ -30,7 +31,7 @@ export default class Home extends React.Component<HomeProps, HomeState> {
     constructor(props: HomeProps) {
         super(props);
 
-        const fullyLoadPage = this.props.page === "home" || this.props.page === "index";
+        const fullyLoadPage = this.props.page === Paths.Home || this.props.page === Paths.Root;
         this.state = {
             identity: identities[2],
             homeOpacity: fullyLoadPage ? 1 : 0,
@@ -75,7 +76,7 @@ export default class Home extends React.Component<HomeProps, HomeState> {
             homeDisplay: ""
         })
         this.props.unthirdifyBackgrounds();
-        this.props.load("home");
+        this.props.load(Paths.Home);
         await sleep(550);
         this.setState({homeOpacity: 1});
     }
@@ -99,8 +100,8 @@ export default class Home extends React.Component<HomeProps, HomeState> {
                         <span style={{opacity: this.state.homeOpacity}}>My name is </span>
                         <b style={{color: "#FAA52D", fontWeight: 600}} onClick={this.returnHome}>Stanley Yip</b>
                     </div>
-					<div className="home-links" style={this.state.linkStyle} onClick={() => this.leaveHome("work")}>WORK</div>
-					<div className="home-links" style={this.state.linkStyle}  onClick={() => this.leaveHome("about")}>ABOUT</div>
+					<div className="home-links" style={this.state.linkStyle} onClick={() => this.leaveHome(Paths.Work)}>WORK</div>
+					<div className="home-links" style={this.state.linkStyle}  onClick={() => this.leaveHome(Paths.About)}>ABOUT</div>
 					<div className="home-links" style={this.state.linkStyle}  onClick={() => window.open(Resume, "_blank")}>RESUME</div>
 				</div>
                 

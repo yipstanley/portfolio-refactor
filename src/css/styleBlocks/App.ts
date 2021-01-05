@@ -5,22 +5,23 @@ export const GreenLeftThirdifiedStyle = {
 export const GreenLeftShiftedStyle = {
     width: ".3vw",
     height: "16vw",
-    left: "20vw",
+    left: "16.7vw",
     top: "37vh"
 };
 
 export const WhiteCenterThirdifiedStyle = {
-    width: "67vw",
+    width: "66vw",
     left: "33vw"
 };
 
 export const WhiteCenterShiftedStyle = {
-    width: "67vw",
-    left: "22vw"
+    width: "66vw",
+    left: "17vw"
 };
 
 export const GreenRightShiftedStyle = {
-    width: "11vw"
+    width: ".3vw",
+    right: "15.7vw",
 };
 
 export const PageDisplayerLoadedStyle = {
@@ -29,6 +30,6 @@ export const PageDisplayerLoadedStyle = {
 
 export const PageDisplayerShiftedStyle = {
     marginTop: 0,
-    marginLeft: "22vw",
+    marginLeft: "17vw",
     ...PageDisplayerLoadedStyle
 }

@@ -1,5 +1,21 @@
 #work-container {
     width: 100%;
-    background: blue;
     height: 100%;
+    display: grid;
+    grid-template-columns: 66vw 15vw;
+    margin-top: 2vw;
+}
+
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#settings-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    width: 16vw;
 }

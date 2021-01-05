@@ -17,6 +17,24 @@ interface AppState {
 	pageDisplayerStyle?: Object
 }
 
+export enum Paths {
+    Root = "",
+    Home = "home",
+    About = "about",
+    Work = "work",
+    Dash = "dash",
+    DashPDF = "pdf%20text%20selection",
+    DashDB = "pdf%20database",
+    DashTravelogue = "event%20travelogue",
+    Threes = "threes",
+    WordGuider = "wordguider",
+    FocalPoint = "focal%20point%20%40%20brown",
+    Redesign = "antonio's%20pizza%20website%20redesign",
+    Iterative = "canaray%20technologies",
+    Watson = "design%20%40%20watson%20institute",
+    Bach = "bach%20to%20the%20future"
+}
+
 export default class App extends React.Component<{}, AppState> {
 	constructor(props: {}) {
 		super(props);
@@ -28,18 +46,20 @@ export default class App extends React.Component<{}, AppState> {
 	}
 
 	public getPageStateFromPath = (): string => {
-		let pathname = window.location.pathname.split("/")[1];
-		while (pathname.indexOf("_") > -1) {
-			let ind = pathname.indexOf("_");
-			pathname = pathname.slice(0, ind) + " " + pathname.slice(ind + 1);
-		}
-		let pathExists = Projects.map(a => a.name.toLowerCase()).includes(pathname) || DashProjects.map(a => a.name.toLowerCase()).includes(pathname) || pathname === "home" || pathname === "work" || pathname === "about";
-		return pathExists ? pathname : "index";
+		const pathname = window.location.pathname;
+		const page = decodeURIComponent(pathname.slice(1));
+		console.log(page);
+		return page;
 	}
 
 	public componentDidMount = () => {
-		if (this.state.page === "index") {
+		if (this.state.page === Paths.Root) {
 			this.animateStart();
+		}
+		else if (this.state.page === Paths.Home) {
+			this.setState({
+				loaded: true
+			})
 		}
 		else {
 			this.setState({
@@ -65,13 +85,13 @@ export default class App extends React.Component<{}, AppState> {
 
 	renderContent = () => {
 		switch (this.state.page) {
-			case "work":
-				return <Work />;
+			case Paths.Work:
+				return <Work load={this.load} />;
 		}
 	}
 
 	load = (where: string) => {
-		if (where === "home") {
+		if (where === Paths.Home) {
 			this.setState({
 				page: where,
 				pageDisplayerStyle: {}

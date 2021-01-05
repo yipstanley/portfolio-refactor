@@ -1,7 +1,14 @@
 import * as React from "react";
 import "../css/stylesheets/Work.css"
+import { Projects } from "../projects";
+import ProjectCard from "./ProjectCard";
+import SortKey from "./SortKey";
 
-export default class Work extends React.Component<{}, {}> {
+interface WorkProps {
+    load: (where: string) => void;
+}
+
+export default class Work extends React.Component<WorkProps, {}> {
     componentDidMount = () => {
 
     }
@@ -9,12 +16,12 @@ export default class Work extends React.Component<{}, {}> {
     render() {
         return (
             <div id="work-container">
-                <div className="work-project"></div>
-                <div className="work-project"></div>
-                <div className="work-project"></div>
-                <div className="work-project"></div>
-                <div className="work-project"></div>
-                <div className="work-project"></div>
+                <div id="projects-container">
+                    {Projects.map(project => <ProjectCard project={project} openProject={this.props.load} />)}
+                </div>
+                <div id="settings-container">
+                    <SortKey />
+                </div>
             </div>
         )
     }

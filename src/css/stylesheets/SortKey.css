@@ -1,0 +1,65 @@
+#sort-key-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1vw;
+    font-size: 1vw;
+}
+
+#sort-key-label {
+    width: 75%;
+    font-weight: 300;
+    letter-spacing: .1vw;
+    text-align: right;
+}
+
+#current-key {
+    background-color: #D6F5D6;
+    font-weight: bold;
+    letter-spacing: .2vw;
+}
+
+.sort-key-item {
+    background-color: #f7faf7;
+    width: 75%;
+    padding: .3vw .3vw .3vw 1vw;
+    border-radius: 4vw;
+    margin-top: .3vw;
+    margin-bottom: .5vw;
+    letter-spacing: .1vw;
+    font-size: 1.4vw;
+    transition: background-color .2s, font-weight .2s, letter-spacing .2s;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: .1vw .1vw .4vw 0 #adbbad;
+    cursor: pointer;
+}
+
+.sort-key-question {
+    background-color: rgb(90, 99, 114);
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+    font-weight: 400;
+    width: 2vw;
+    height: 2vw;
+    cursor: help;
+}
+
+.sort-key-tooltip {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    margin-top: -1.5vw;
+    right: 3.5vw;
+    background-color: rgb(55, 55, 68);
+    color: white;
+    font-size: 1vw;
+    padding: .2vw 1vw;
+    font-weight: 400;
+    letter-spacing: .1vw;
+    border-radius: 3vw 3vw 0 3vw;
+    box-shadow: .2vw .2vw .3vw 0 #333333;
+    transition: opacity .1s;
+}

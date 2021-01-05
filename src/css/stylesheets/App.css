@@ -43,12 +43,12 @@
 
 #green-right {
 	background-color: #D6F5D6;
-	width: 0%;
+	width: 16vw;
 	height: 100%;
 	position: absolute;
-	right: 0;
+	right: -16vw;
 	top: 0;
-	transition: width .5s, left .5s, height .5s, top .5s;
+	transition: width .5s, right .5s, height .5s, top .5s;
 }
 
 #white-center {
@@ -65,7 +65,7 @@
 #background {
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: -100;
@@ -75,7 +75,7 @@
 	margin-top: 5vh;
 	margin-left: 33vw;
 	height: 100%;
-	width: 67vw;
+	width: 76vw;
 	position: absolute;
 	left: 0;
 	top: 0;
