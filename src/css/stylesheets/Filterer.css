@@ -1,11 +1,5 @@
-#current-key {
-    background-color: #D6F5D6;
-    font-weight: bold;
-    letter-spacing: .2vw;
-}
-
-.sort-key-item {
-    background-color: #f7faf7;
+.filter-item {
+    background-color: #FFE8C8;
     width: 75%;
     padding: .3vw .3vw .3vw 1vw;
     border-radius: 4vw;
@@ -18,4 +12,10 @@
     justify-content: space-between;
     box-shadow: .1vw .1vw .4vw 0 #adbbad;
     cursor: pointer;
+}
+
+.checked {
+    background-color: #FFC675;
+    font-weight: bold;
+    letter-spacing: .2vw;
 }

@@ -1,7 +1,12 @@
 import * as React from "react";
 import "../css/stylesheets/SortKey.css"
 
-interface SortKeyState {
+interface SorterProps {
+    keyChanged: (newKey: string) => void,
+    currentKey: string
+}
+
+interface SorterState {
     currentKey: string,
 }
 
@@ -12,24 +17,16 @@ export const SortableKeys: {[key: string]: string} = {
     Earliest: "See my oldest projects first",
 } 
 
-export default class SortKey extends React.Component<{}, SortKeyState> {
-    constructor(props: {}) {
-        super(props);
-
-        this.state = {
-            currentKey: "Favorite",
-        }
-    }
-
+export default class Sorter extends React.Component<SorterProps, SorterState> {
     render() {
         return (
-            <div id="sort-key-container">
-                <div id="sort-key-label">
+            <div className="setting-container">
+                <div className="setting-label">
                     SORT BY:
                 </div>
                 {Object.entries(SortableKeys).map(item => {
                     return (
-                        <SortItem key={item[0]} currentKey={this.state.currentKey} item={item} clicked={() => this.setState({currentKey: item[0]})} />
+                        <SortItem key={item[0]} currentKey={this.props.currentKey} item={item} clicked={() => this.props.keyChanged(item[0])} />
                     );
                 })}
             </div>
@@ -66,12 +63,12 @@ class SortItem extends React.Component<SortItemProps, SortItemState> {
                 onClick={this.props.clicked}>
                 {key}
                 <div
-                    className="sort-key-question"
+                    className="question-button"
                     onMouseEnter={() => this.setState({showToolTip: true})}
                     onMouseLeave={() => this.setState({showToolTip: false})}>
                     ?
                 </div>
-                <div className="sort-key-tooltip" style={{opacity: this.state.showToolTip ? 1 : 0 }}>
+                <div className="tooltip" style={{opacity: this.state.showToolTip ? 1 : 0 }}>
                     {desc}
                 </div>
             </div>
