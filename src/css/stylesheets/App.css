@@ -14,6 +14,7 @@
 	-ms-user-select: none;
 	user-select: none;
 	pointer-events: none;
+    transition-timing-function: ease-in;
 }
 
 #cover-hey-there {
@@ -39,6 +40,7 @@
 	left: 0;
 	top: 0;
 	transition: width .5s, left .5s, height .5s, top .5s;
+    transition-timing-function: ease;
 }
 
 #green-right {
@@ -49,6 +51,7 @@
 	right: -16vw;
 	top: 0;
 	transition: width .5s, right .5s, height .5s, top .5s;
+    transition-timing-function: ease;
 }
 
 #white-center {
@@ -60,6 +63,7 @@
 	left: 0;
 	top: 0;
 	transition: width .5s, left .5s;
+    transition-timing-function: ease;
 }
 
 #background {
@@ -81,4 +85,5 @@
 	top: 0;
 	opacity: 0;
 	transition: margin-left .5s, margin-top 1s, opacity 1s;
+    transition-timing-function: ease-out;
 }

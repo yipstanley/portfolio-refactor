@@ -1,13 +1,11 @@
 import * as React from "react";
 import "../css/stylesheets/Work.css"
 import { Projects } from "../projects";
+import { sleep } from "../utils";
+import { Paths } from "./App";
 import Filterer from "./Filterer";
 import ProjectCard from "./ProjectCard";
 import Sorter from "./SortKey";
-
-interface WorkProps {
-    load: (where: string) => void;
-}
 
 export declare type StackLevelState = {
     Frontend: boolean,
@@ -20,10 +18,15 @@ export declare type ProjectTypeState = {
     Work: boolean,
     Personal: boolean};
 
+interface WorkProps {
+    load: (where: string) => void;
+}
+
 interface WorkState {
     currentSortKey: string,
     stackLevel: StackLevelState,
-    projectType: ProjectTypeState
+    projectType: ProjectTypeState,
+    settingsVisible: boolean
 }
 
 export default class Work extends React.Component<WorkProps, WorkState> {
@@ -42,12 +45,16 @@ export default class Work extends React.Component<WorkProps, WorkState> {
                 School: true,
                 Work: true,
                 Personal: true
-            }
+            },
+            settingsVisible: false
         }
     }
 
-    componentDidMount = () => {
-
+    componentDidMount = async () => {
+        await sleep(2000);
+        this.setState({
+            settingsVisible: true
+        })
     }
 
     getProjects = () => {
@@ -104,7 +111,7 @@ export default class Work extends React.Component<WorkProps, WorkState> {
                 <div id="projects-container">
                     {this.getProjects().map(project => <ProjectCard key={project.name} project={project} openProject={this.props.load} />)}
                 </div>
-                <div id="settings-container">
+                <div id="settings-container" style={{opacity: this.state.settingsVisible ? 1 : 0, marginTop: this.state.settingsVisible ? 0 : "4vw"}}>
                     <Sorter keyChanged={(newValue) => this.setState({currentSortKey: newValue})} currentKey={this.state.currentSortKey} />
                     <Filterer filterItemClicked={this.filterItemClicked} filterLabel="STACK LEVEL" filterOptions={
                         {

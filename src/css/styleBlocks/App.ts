@@ -22,6 +22,8 @@ export const WhiteCenterShiftedStyle = {
 export const GreenRightShiftedStyle = {
     width: ".3vw",
     right: "15.7vw",
+    height: "43vw",
+    top: "2.5vw"
 };
 
 export const PageDisplayerLoadedStyle = {
